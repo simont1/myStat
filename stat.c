@@ -43,5 +43,5 @@ int main(){
   printf("%.6f MB\n", sprintf(test, "%s", str)/1000000.0);
   printf("%.9f GB\n", sprintf(test, "%s", str)/1000000000.0);
 
-  //printf("Permissions: %mode_t\n", data->mode_t); //sizeof(test));
+  //printf("Permissions: %o\n", data->st_mode); //sizeof(test));
 }
