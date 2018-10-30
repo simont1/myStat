@@ -21,6 +21,6 @@ int main(){
   stat("test.txt", data);
   // char *place = ctime(&data->st_size);
   printf("File size: %lld\n", data->st_size);
-  printf("File permissions: %o\n", data->st_mode);
+  printf("File permissions: %o\n", data->st_mode & (S_IRWXU | S_IRWXG | S_IRWXO));
   printf("File last accessed: %s\n", ctime(&(data->st_atime)));
 }
