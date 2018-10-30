@@ -15,32 +15,6 @@ void text(){
   close(fd);
 }
 
-/* char * return_permissions(char * start, char * data_perms){ */
-/*   if(start > 0){ */
-/*     if(data_perm[3] % 2 == 1){ */
-/*       perms[3] = "x"; */
-/*     } */
-/*     else{ */
-/*       if(*(start-1) >= 2){ */
-/* 	perms[2] = "w"; */
-/*       } */
-/*       else{ */
-/* 	perms[2] = "-"; */
-/*       } */
-/*       if(data_perm[3] >= 4){ */
-/* 	perms[1] = "r"; */
-/*       } */
-/*       else{ */
-/* 	perms[1] = "-"; */
-/*       } */
-/*     } */
-/*   } */
-/*   else{ */
-/*     perms[1] = '-'; */
-/*     perms[2] = '-'; */
-/*     perms[3] = '-'; */
-/*   } */
-/* } */
 
 
 int main(){
@@ -64,11 +38,10 @@ int main(){
   
   char test[256];
   printf("Sizes:\n");
-  printf("%d B\n", sprintf(test, "%s", str));
-  printf("%d KB\n", sprintf(test, "%s", str)/1000);
-  printf("%d MB\n", sprintf(test, "%s", str)/1000000);
-  printf("%d GB\n", sprintf(test, "%s", str)/1000000000);
+  printf("%.1f B\n", sprintf(test, "%s", str)/1.0);
+  printf("%.3f KB\n", sprintf(test, "%s", str)/1000.0);
+  printf("%.6f MB\n", sprintf(test, "%s", str)/1000000.0);
+  printf("%.9f GB\n", sprintf(test, "%s", str)/1000000000.0);
 
-  //printf("File size (Human Readable): %lu\n", num); //sizeof(test));
   //printf("Permissions: %mode_t\n", data->mode_t); //sizeof(test));
 }
