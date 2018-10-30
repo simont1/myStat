@@ -7,7 +7,7 @@
 #include <time.h>
 #include <sys/stat.h>
 
-int text(){
+void text(){
   char * line = "hello world";
   char * file1 = "test.txt";
   int fd = open(file1, O_RDWR|O_CREAT, 0666);
@@ -15,13 +15,12 @@ int text(){
   close(fd);
 }
 
-
 int main(){
   text();
-  struct stat *data = malloc(sizeof(stat));
+  struct stat *data = malloc(sizeof(struct stat));
   stat("test.txt", data);
   // char *place = ctime(&data->st_size);
-  printf("File size: %ld\n", data->st_size);
+  printf("File size: %lld\n", data->st_size);
   printf("File permissions: %o\n", data->st_mode);
-  printf("File last accessed: %s\n", ctime((data->st_atime)));
+  printf("File last accessed: %s\n", ctime(&(data->st_atime)));
 }
